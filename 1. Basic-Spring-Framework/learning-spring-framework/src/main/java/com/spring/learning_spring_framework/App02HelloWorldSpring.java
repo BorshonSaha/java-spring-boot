@@ -14,6 +14,9 @@ public class App02HelloWorldSpring {
 		
 //		3: Retrieving beans managed by beans
 		System.out.println(context.getBean("name"));
+		System.out.println(context.getBean("age"));
+		System.out.println(context.getBean("person"));
+		System.out.println(context.getBean("address"));
 	}
 
 }
