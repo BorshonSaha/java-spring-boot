@@ -3,6 +3,7 @@ package com.project.spring_boot.pagination.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.project.spring_boot.pagination.entity.Product;
@@ -15,5 +16,9 @@ public class ProductService {
 	
 	public List<Product> findAllProducts() {
 		return repository.findAll();
+	}
+	
+	public List<Product> findProductWithSorting(String field) {
+		return repository.findAll(Sort.by(Sort.Direction.ASC, field));
 	}
 }
