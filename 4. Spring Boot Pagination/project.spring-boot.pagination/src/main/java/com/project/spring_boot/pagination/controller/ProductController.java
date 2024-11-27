@@ -37,4 +37,11 @@ public class ProductController {
 		Page<Product> productsWithPagination = service.findProductsWithPagination(pageNumber, pageSize);
 		return new ApiResponse<>(productsWithPagination.getSize(), productsWithPagination);
 	}
+	
+	@GetMapping("/paginationAndSort/{pageNumber}/{pageSize}/{field}")
+	public ApiResponse<Page<Product>> findProductsWithPaginationAndSorting(@PathVariable int pageNumber,
+			@PathVariable int pageSize, @PathVariable String field) {
+		Page<Product> productsWithPaginationAndSorting = service.findProductsWithPaginationAndSorting(pageNumber, pageSize, field);
+		return new ApiResponse<>(productsWithPaginationAndSorting.getSize(), productsWithPaginationAndSorting);
+	}
 }
