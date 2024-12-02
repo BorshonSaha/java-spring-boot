@@ -1,0 +1,19 @@
+type Test {
+	id: ID!
+	title: String!
+}
+
+type Query {
+    getAllProperties: [Property]
+}
+
+type Mutation {
+    addProperty(title: String!, datatype: String!, category: String!, maxLength: Int!): Property
+    addData(title: String): Test
+}
+
+type Property {
+    id: ID!
+    title: String!
+}
+
